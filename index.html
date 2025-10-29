@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main_title">
+        <span>Cyrus</span> The <span class="span_2">Great</span>
+      </div>
+
+      <img class="main_image" src="./images/cyrus.png" alt="Cyrus the great" />
+
+      <img class="map" src="./images/map.jpg" alt="Achaemenid's map" />
+
+      <!-- <div class="page_2_information">
+        <img src="./images/shahbaz.png" alt="Shahbaz" class="shahbaz" />
+        <div class="main_title_2">𐎺𐎡𐎰𐎶 𐎤𐎢𐎽𐎢𐏁 𐎺𐎹𐎰𐎼𐎣𐎠 𐎳𐎼𐎶𐎠𐎴𐎠 𐎲𐎢𐎫𐎢</div>
+      </div>
+
+      <img
+        class="tomb"
+        src="./images/cyrus-tomb.png"
+        alt="Cyrus the great tomb"
+      /> -->
+    </div>
+
+    <script>
+      let status = false;
+
+      let map = document.querySelector(".map");
+
+      setInterval(() => {
+        map.classList.add("show");
+      }, 100);
+
+      let main_image = document.querySelector(".main_image");
+
+      setInterval(() => {
+        main_image.classList.add("show");
+      }, 1500);
+
+      let title = document.querySelector(".main_title");
+
+      setInterval(() => {
+        title.classList.add("show");
+      }, 1300);
+
+      setInterval(() => {
+        status = true;
+      }, 4500);
+
+      // let tomb = document.querySelector(".tomb");
+      // let shahbaz = document.querySelector(".shahbaz");
+
+      // const newScroll = () => {
+      //   setInterval(() => {
+      //     tomb.classList.add("show");
+      //     shahbaz.classList.add("show");
+      //   }, 500);
+      // };
+
+      // let container = document.querySelector(".container");
+
+      // container.addEventListener("mousewheel", () => {
+      //   if (status) {
+      //     main_image.classList.add("hide");
+      //     title.classList.add("hide");
+      //     setInterval(() => {
+      //       map.classList.add("hide");
+      //       newScroll();
+      //     }, 1000);
+      //   } else {
+      //     return;
+      //   }
+      // });
+    </script>
+  </body>
+</html>

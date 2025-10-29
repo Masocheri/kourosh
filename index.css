@@ -1,0 +1,354 @@
+@font-face {
+    font-family: GermaniaOne;
+    src: url(./fonts/GermaniaOne.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: GermaniaOne;
+}
+
+body {
+    background-color: #101010;
+    overflow: hidden;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.main_title {
+    color: #000;
+    font-size: 220px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    top: -100%;
+    transform: translate(-50%, -50%);
+}
+
+.main_title.show {
+    animation: main_title 2s;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main_title.show span {
+    position: relative;
+    animation: span_animation 4s;
+    right: 100px;
+}
+
+.main_title.show .span_2 {
+    position: relative;
+    animation: span_2_animation 4s;
+    left: 20px;
+}
+
+@keyframes span_animation {
+    0% {
+        position: relative;
+        right: 0;
+    }
+
+    100% {
+        position: relative;
+        right: 100px;
+    }
+}
+
+@keyframes span_2_animation {
+    0% {
+        position: relative;
+        left: 0;
+    }
+
+    100% {
+        position: relative;
+        left: 20px;
+    }
+}
+
+@keyframes main_title {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.main_image {
+    width: 700px;
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
+    bottom: -100%;
+}
+
+.main_image.show {
+    animation: cyrus_animation 3s;
+    bottom: 0;
+}
+
+@keyframes cyrus_animation {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.map {
+    width: 100%;
+    height: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.map.show {
+    animation: map_height 2s alternate;
+    height: 100%;
+    filter: grayscale(1) blur(10px);
+}
+
+@keyframes map_height {
+    0% {
+        height: 0;
+        filter: grayscale(0) blur(0);
+    }
+
+    100% {
+        height: 100%;
+        filter: grayscale(1) blur(10px);
+    }
+}
+
+.map.hide {
+    animation: map_height_2 2s alternate;
+    height: 0;
+}
+
+@keyframes map_height_2 {
+    0% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+.main_image.hide {
+    animation: cyrus_animation_2 4s;
+    bottom: -100%;
+}
+
+@keyframes cyrus_animation_2 {
+    0% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: -100%;
+    }
+}
+
+.main_title.hide {
+    animation: main_title_2 4s;
+    top: -100%;
+    transform: translate(-50%, 100%);
+}
+
+@keyframes main_title_2 {
+    0% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        top: -100%;
+        transform: translate(-50%, 100%);
+    }
+}
+
+.tomb {
+    position: absolute;
+    left: 50%;
+    bottom: -100%;
+    width: 1000px;
+    object-fit: contain;
+    z-index: 3;
+    bottom: -100%;
+    transform: translate(-50%, 100%);
+    filter: grayscale(1);
+}
+
+.tomb.show {
+    animation: tomb_animation 3s;
+    bottom: -30px;
+    transform: translate(-50%, 0);
+}
+
+@keyframes tomb_animation {
+    0% {
+        bottom: -100%;
+        transform: translate(-50%, 100%);
+    }
+
+    100% {
+        bottom: -30px;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+.about_1 {
+    color: #000;
+    font-size: 30px;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+}
+
+.shahbaz {
+    object-fit: contain;
+    width: 600px;
+}
+
+.main_title_2 {
+    font-size: 50px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.page_2_information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1440px) {
+    .main_title {
+        font-size: 180px;
+    }
+
+    .main_image {
+        width: 600px;
+    }
+}
+
+@media (max-width: 1439px) {
+    .main_title {
+        font-size: 120px;
+    }
+
+    .main_image {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .main_title {
+        font-size: 100px;
+        top: -100%;
+        transform: translate(-50%, 100%);
+    }
+
+    .main_title.show {
+        animation: main_title 2s;
+        top: 50px;
+        transform: translate(-50%, 0);
+    }
+
+    .main_title.show span {
+        animation: none;
+        right: 0;
+    }
+
+    .main_title.show .span_2 {
+        animation: none;
+        left: 0;
+    }
+
+    @keyframes main_title {
+        0% {
+            top: -100%;
+        }
+
+        100% {
+            top: 50px;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .main_image {
+        width: 550px;
+    }
+
+    .main_image.show {
+        animation: cyrus_animation 2s;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .main_title {
+        font-size: 80px;
+        top: -100%;
+        transform: translate(-50%, 100%);
+    }
+
+    .main_title.show {
+        animation: main_title 3s;
+        top: 100px;
+        transform: translate(-50%, 0);
+    }
+
+    @keyframes main_title {
+        0% {
+            top: -100%;
+        }
+
+        100% {
+            top: 100px;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .main_image {
+        width: 400px;
+    }
+}
+
+@media (max-width: 374px) {
+    .main_title {
+        font-size: 70px;
+    }
+
+    .main_image {
+        width: 330px;
+    }
+}
